@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets/config/rotas.dart';
-
-class WidgetPessoa extends StatefulWidget {
-  const WidgetPessoa({super.key});
-
-  @override
-  State<WidgetPessoa> createState() => _WidgetPessoaState();
-}
-
-class _WidgetPessoaState extends State<WidgetPessoa> {
-  final _formKey = GlobalKey<FormState>();
-  String _nome = '';
-  String _telefone = '';
-  String _url = '';
-
-  var pessoas = [
+var pessoas = [
     {
       'nome': 'João',
       'idade': 30,
@@ -48,6 +34,23 @@ class _WidgetPessoaState extends State<WidgetPessoa> {
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPjv1lHEIpzgDk_e3Sm-e4EVOzggYdb5aHA&s',
     },
   ];
+
+class WidgetPessoa extends StatefulWidget {
+  const WidgetPessoa({super.key});
+
+  @override
+  State<WidgetPessoa> createState() => _WidgetPessoaState();
+}
+
+class _WidgetPessoaState extends State<WidgetPessoa> {
+  final _formKey = GlobalKey<FormState>();
+  String _nome = '';
+  String _telefone = '';
+  String _url = '';
+
+
+  
+  
 
   @override
   Widget build(BuildContext context) {
@@ -268,7 +271,9 @@ class _WidgetPessoaState extends State<WidgetPessoa> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(Rotas.cadastroPessoa);
+          Navigator.of(context).pushNamed(Rotas.cadastroPessoa).then((_) => setState(() {
+            
+          }));
         },
         tooltip: 'Adicionar Pessoa',
         child: const Icon(Icons.person_add),

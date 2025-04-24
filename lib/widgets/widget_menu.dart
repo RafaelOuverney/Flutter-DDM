@@ -23,7 +23,7 @@ class WidgetMenu extends StatelessWidget{
                         const Spacer(flex: 15),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context).pop();
+                            Navigator.popAndPushNamed(context, Rotas.home);
                           },
                           child: const Icon(Icons.close),
                         ),
@@ -69,6 +69,18 @@ class WidgetMenu extends StatelessWidget{
                   Navigator.pushNamed(context, Rotas.estado);
                 },
                 child: const Text('Ir para cadastro de estado'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Rotas.cidade);
+                },
+                child: const Text('Ir para cadastro de cidade'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Rotas.pessoa);
+                },
+                child: const Text('Ir para cadastro de pessoa'),
               ),
                TextFormField(
                 cursorWidth: 5,
